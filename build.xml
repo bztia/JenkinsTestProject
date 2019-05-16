@@ -1,0 +1,21 @@
+<project name="hello_world" default="run" basedir=".">
+    <property name="src" value="src"/>
+    <property name="class" value="class"/>
+    <target name="init">
+        <mkdir dir="${class}"/>
+    </target>
+    <path id="classpath">
+        <pathelement path="${class}"/>
+    </path>
+    <target name="compile" depends="init">
+        <javac debug="true" srcdir="${src}" destdir="${class}" includeAntRuntime="false"/>
+    </target>
+    <target name="run" depends="compile">
+        <java classname="HelloWorld">
+            <classpath refid="classpath"/>
+        </java> 
+    </target>
+    <target name="clean">
+        <delete dir="${class}"/>
+    </target>
+</project>
