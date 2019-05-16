@@ -1,6 +1,7 @@
 <project name="hello_world" default="run" basedir=".">
     <property name="src" value="src"/>
     <property name="class" value="class"/>
+    <property name="test" value="test" />
     <target name="init">
         <mkdir dir="${class}"/>
     </target>
